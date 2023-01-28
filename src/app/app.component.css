@@ -1,0 +1,11 @@
+.tout{
+  display: flex;
+  flex-direction: row-reverse;
+  height :auto
+  }
+
+  .droit{
+    display: flex;
+    flex-direction: column;
+    display: 3;
+  }
