@@ -1,4 +1,9 @@
 .list{
   display:flex;
+  flex-direction: column;
   background-color: antiquewhite;
+}
+.lapinsList{
+  display: flex;
+  flex-direction: column;
 }

@@ -1,3 +1,5 @@
 <div class="list">
   <h1>liste de lapinous a adopter:</h1>
+
+<app-affich-kitten *ngFor="let item of lapinsAdoption" [item]="item" (deleteEmitter)="deleteLapin($event)"></app-affich-kitten>
 </div>

@@ -1,0 +1,4 @@
+.affich{
+  display: flex;
+  flex-direction: column;
+}

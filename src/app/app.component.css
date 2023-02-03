@@ -9,3 +9,7 @@
     flex-direction: column;
     display: 3;
   }
+
+  .list{
+    display: flex;
+  }
