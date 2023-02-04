@@ -1,15 +1,11 @@
 
 
 <div class="droit">
-  <app-create-kitten [lapinsAdoption]="lapinsAdoption" ></app-create-kitten>
-
+  <app-create-kitten (addAdoptionEmitter)="adopteLapinFormulaire($event)" ></app-create-kitten>
   <app-user-kitten [mesLapins]="mesLapins"></app-user-kitten>
-
 </div>
-
 <!-- (addAdoption)="addAdoption($event)" -->
 
-  <h1>liste de lapinous a adopter:</h1>
 <div class="list">
-<app-affich-kitten *ngFor="let item of lapinsAdoption" [item]="item" [lapinsAdoption]="lapinsAdoption" (copyEmitter)="adopteLapin($event)"></app-affich-kitten>
+<app-list-kitten  [lapinsAdoption]="lapinsAdoption" (lapinPourAdoptionUserEmitter)="adopteLapinDansListeAdoption($event)"></app-list-kitten>
 </div>

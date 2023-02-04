@@ -1,21 +1,21 @@
 <div clas="create">
 <h1>formulaire d'ajouts de Lapinou:</h1>
-<form #lapinForm="ngForm" (ngSubmit)="lapinForm.valid && onSubmit();lapinForm.resetForm()">
+<form [formGroup]="form" (ngSubmit)="submit()">
   <div class="formulaire">
   <label for="nom">Nom: </label>
-  <input type="text" id="nom" placeholder="Nom du lapinou" [(ngModel)]="pinpin.nom" name="nom" #nom="ngModel" required>
-  <div *ngIf="nom.errors">Le nom est requis</div>
+  <input type="text" id="nom" placeholder="Nom du lapinou" name="nom" formControlName="nom" required>
+  <!-- <div *ngIf="nom.errors">Le nom est requis</div> -->
   <label for="race">Race: </label>
-  <input type="text" id="race" placeholder="Race du lapinou" [(ngModel)]="pinpin.race" name="race" #race="ngModel" required>
-  <div *ngIf="race.errors">La race est requise</div>
+  <input type="text" id="race" placeholder="Race du lapinou" name="race"  required formControlName="race">
+  <!-- <div *ngIf="race.errors">La race est requise</div> -->
   <label for="date">Date de naisance: </label>
-  <input type="date" id="date" placeholder="Date de naissance du lapinou" [(ngModel)]="pinpin.date" name="date" #date="ngModel" required>
-  <div *ngIf="date.errors">La date de naissance est requise</div>
+  <input type="date" id="date" placeholder="Date de naissance du lapinou"  name="date"  formControlName="date" required>
+  <!-- <div *ngIf="date.errors">La date de naissance est requise</div> -->
   <label for="photo">lien vers une photo: </label>
-  <input type="text" id="photo" placeholder="Lien vers une photo du lapinou" [(ngModel)]="pinpin.photo" name="photo" #photo="ngModel" required>
-  <div *ngIf="race.errors">Une photo est nécessaire</div>
+  <input type="text" id="photo" placeholder="Lien vers une photo du lapinou"  name="photo"  formControlName="photo" required>
+  <!-- <div *ngIf="race.errors">Une photo est nécessaire</div> -->
 
-  <button type="submit">Enregistrer un nouveau lapin</button>
+  <button type="submit" [disabled]="form.invalid">Enregistrer un nouveau lapin</button>
 </div>
 </form>
 </div>

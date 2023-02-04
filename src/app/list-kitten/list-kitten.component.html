@@ -1,5 +1,10 @@
 <div class="list">
   <h1>liste de lapinous a adopter:</h1>
 
-<app-affich-kitten *ngFor="let item of lapinsAdoption" [item]="item" (deleteEmitter)="deleteLapin($event)"></app-affich-kitten>
-</div>
+  <div *ngFor="let lapin of lapinsAdoption;let index=index">
+    <span>{{lapin.nom}}</span>
+    <span> {{lapin.race}}</span>
+    <span> {{lapin.date | date: 'shortDate'}}</span>
+    <span> <img src={{lapin.photo}} alt="photo" width="200" appTest></span>
+    <span><button (click)="adopteLapin(index)">Adopter ce lapinou</button></span>
+    </div>

@@ -1,7 +1,6 @@
 import { Component,EventEmitter, Output, Input } from '@angular/core';
 import { Lapin } from '../lapin';
-import { FormsModule } from '@angular/forms';
-// import { PartageService } from '../partage.service'
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-create-kitten',
@@ -9,25 +8,28 @@ import { FormsModule } from '@angular/forms';
   styleUrls: ['./create-kitten.component.css']
 })
 export class CreateKittenComponent {
-pinpin: Lapin = new Lapin ("","",new Date(),"")
-  @Output() addAdoptionEmitter = new EventEmitter()
+
+@Output() addAdoptionEmitter = new EventEmitter()
+
   @Input() lapinsAdoption: any;
   @Input() item: any
-nouveauLapinou: Lapin [] = []
-
 
 formOk: boolean = false
+form: FormGroup = new FormGroup ({
+  nom: new FormControl ("",Validators.required),
+  race: new FormControl ("",Validators.required),
+  date: new FormControl( "",Validators.required ),
+  photo: new FormControl ("",Validators.required)
+})
 
+submit():void{
+    console.log(this.form.value.date)
+  // console.log(this.pinpin)
+ const pinpin = new Lapin(this.form.value.nom, this.form.value.race, this.form.value.date, this.form.value.photo)
+  // this.lapinsAdoption.push(this.pinpin)
+  console.log(pinpin);
+  this.addAdoptionEmitter.emit(pinpin)
 
-// constructor (public Partage: PartageService) {}
-
-onSubmit():void{
-  let lapin: Lapin = new Lapin ("","",new Date(),"")
-    console.log("enregistrement en cours ...")
-  lapin=this.pinpin
-  console.log(lapin)
-  this.lapinsAdoption.push(lapin)
- 
  }
 
 }

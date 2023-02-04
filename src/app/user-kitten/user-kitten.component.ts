@@ -8,7 +8,7 @@ import { Lapin } from '../lapin';
 })
 export class UserKittenComponent implements OnInit{
 
-  // nouveauLapin: Lapin = new Lapin ("","",new Date(),"")
+
   @Input() mesLapins:any
 @Input() nouveauLapin: any = []
 lapins:any=[]
