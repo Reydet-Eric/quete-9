@@ -1,10 +1,12 @@
 <div class="list">
   <h1>liste de lapinous a adopter:</h1>
 
-  <div *ngFor="let lapin of lapinsAdoption;let index=index">
-    <span>{{lapin.nom}}</span>
-    <span> {{lapin.race}}</span>
-    <span> {{lapin.date | date: 'shortDate'}}</span>
+  <div class="list" *ngFor="let lapin of lapinsAdoption;let index=index">
+    <div class="lapin">
+    <div> {{lapin.nom}} </div>
+    <div> {{lapin.race}} </div>
+    <span> {{lapin.date | date: 'shortDate'}} </span>
     <span> <img src={{lapin.photo}} alt="photo" width="200" appTest></span>
     <span><button (click)="adopteLapin(index)">Adopter ce lapinou</button></span>
+</div>
     </div>

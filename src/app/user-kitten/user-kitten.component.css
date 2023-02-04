@@ -4,3 +4,8 @@ display:flex;
 display: 1;
 ;
 }
+
+.liste{
+  display: flex;
+  flex-direction: column;
+}
