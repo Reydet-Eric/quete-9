@@ -1,4 +1,4 @@
-import { Directive, ElementRef, HostListener, Renderer2 } from '@angular/core';
+import { Directive, ElementRef, HostListener, Renderer2, Component } from '@angular/core';
 
 
 @Directive({
@@ -6,8 +6,9 @@ import { Directive, ElementRef, HostListener, Renderer2 } from '@angular/core';
 })
 export class TestDirective {
    @HostListener("mouseenter") public changeColor(){
-    this.el.nativeElement.style.width="400px";
+    // this.el.nativeElement.style.width="400px";
     this.el.nativeElement.style.border="solid 5px";
+    this.renderer.removeClass(this.el.nativeElement, 'bonus')
 
    }
    @HostListener("mouseleave") public changeColor2(){
